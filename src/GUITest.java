@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.border.*;
 import java.awt.*;
 
 
@@ -13,6 +14,7 @@ public class GUITest extends JFrame{
 		testTwo();
 		testThree();
 		testFour();
+		testFive();
 	}
 	
 	public static void testOne() {
@@ -83,7 +85,7 @@ public class GUITest extends JFrame{
 		three.setVisible(true);
 	}
 	
-	public static void testFour() { //using custom create panel class to make buttons
+	public static void testFour() { //create panel class to make buttons
 		JFrame four = new JFrame("Problem 12_4");
 		four.setLayout(new GridLayout(2,3,5,5));
 		JPanel p1 = new CreatePanel();
@@ -95,6 +97,33 @@ public class GUITest extends JFrame{
 		four.setSize(300, 150);
 		four.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		four.setVisible(true);
+	}
+	
+	public static void testFive() { //display four rows in one column with four labels. each with a line border.
+		JFrame five = new JFrame("Problem 12_5");
+		
+		five.setLayout(new GridLayout(4,1));
+		Border lineBorder = new LineBorder(Color.BLACK, 2);
+		
+
+		JLabel label1 = new JLabel("Umbrella Corperation");
+		label1.setBorder(lineBorder);
+		JLabel label2 = new JLabel("Medical Corp.");
+		label2.setBorder(lineBorder);
+		JLabel label3 = new JLabel("Atlantic City 514 Main Street");
+		label3.setBorder(lineBorder);
+		JLabel label4 = new JLabel("(800) 735-3857");
+		label4.setBorder(lineBorder);
+		
+		five.add(label1);
+		five.add(label2);
+		five.add(label3);
+		five.add(label4);
+		
+		five.setLocation(1920+400, 1080-400);
+		five.setSize(300, 150);
+		five.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		five.setVisible(true);
 	}
 
 }
